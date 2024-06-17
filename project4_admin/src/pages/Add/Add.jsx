@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./Add.css";
 import { assets } from "../../assets/assets";
 
 const Add = () => {
   const [image, setImage] = useState(false);
+  const [data, setData] = useState({
+    name: "",
+    description: "",
+    price: "",
+    category: "Blended",
+  });
+
+  const onChangeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setData((data) => ({ ...data, [name]: value }));
+  };
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   return (
     <div className="add">
@@ -27,23 +43,42 @@ const Add = () => {
         </div>
         <div className="add-product-name flex-col">
           <p>Product name</p>
-          <input type="text" name="name" placeholder="Product" />
+          <input
+            onChange={onChangeHandler}
+            value={data.name}
+            type="text"
+            name="name"
+            placeholder="Product"
+          />
         </div>
         <div className="add-product-description flex-col">
           <p>Product description</p>
-          <textarea type="description" rows="6" placeholder="Description" />
+          <textarea
+            onChange={onChangeHandler}
+            value={data.description}
+            type="description"
+            rows="6"
+            name="description"
+            placeholder="Description"
+          />
         </div>
-        <div className="add-product-price">
-          <div className="add-category-price flex-col">
+        <div className="add-category-price">
+          <div className="add-category flex-col">
             <p>Product category</p>
-            <select name="category">
+            <select onChange={onChangeHandler} name="category">
               <option value="Blended">Blended</option>
               <option value="Single-origin">Single origin</option>
             </select>
           </div>
-          <div className="add-category-price  flex-col">
+          <div className="add-price flex-col">
             <p>Price</p>
-            <input type="Number" name="price" placeholder="Price" />
+            <input
+              onChange={onChangeHandler}
+              value={data.price}
+              type="Number"
+              name="price"
+              placeholder="Price"
+            />
           </div>
         </div>
         <button type="submit" className="add-btn">

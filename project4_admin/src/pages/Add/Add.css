@@ -21,10 +21,10 @@
 
 .add-product-name input,
 .add-product-description textarea {
-  padding: 10px;
+  padding: 10px 10px;
 }
 
-.add-product-price {
+.add-category-price {
   display: flex;
   gap: 30px;
 }

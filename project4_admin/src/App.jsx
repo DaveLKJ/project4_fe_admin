@@ -10,7 +10,7 @@ import List from "./pages/List/List";
 import Orders from "./pages/Orders/Orders";
 
 const App = () => {
-  const url = "http://localhost:6001";
+  const url = "https://project4-be-oulv.onrender.com";
 
   return (
     <div>

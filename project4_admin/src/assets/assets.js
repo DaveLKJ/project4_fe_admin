@@ -14,4 +14,4 @@ export const assets = {
   parcel_icon,
 };
 
-export const url = "http://localhost:6001";
+export const url = "https://project4-be-oulv.onrender.com";

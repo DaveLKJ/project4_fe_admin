@@ -99,7 +99,7 @@ const Add = ({ url }) => {
             <p>Product category</p>
             <select name="category" onChange={onChangeHandler}>
               <option value="Blended">Blended</option>
-              <option value="Single-origin">Single origin</option>
+              <option value="Single origin">Single origin</option>
             </select>
           </div>
           <div className="add-price flex-col">

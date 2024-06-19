@@ -39,7 +39,7 @@ const Order = () => {
           <div key={index} className="order-item">
             <img src={assets.parcel_icon} alt="" />
             <div>
-              <p className="order-item-coffee">
+              <p className="order-item-food">
                 {order.items.map((item, index) => {
                   if (index === order.items.length - 1) {
                     return item.name + " x " + item.quantity;
@@ -77,6 +77,7 @@ const Order = () => {
               id=""
             >
               <option value="Order Processing">Order Processing</option>
+              <option value="Out for delivery">Out for delivery</option>
               <option value="Delivered">Delivered</option>
             </select>
           </div>
